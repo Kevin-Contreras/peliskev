@@ -12,13 +12,13 @@
 </head>
 <body>
 
-      <div style="margin-left:7%;" id="response">
+      <div style="margin-left:4%;" id="response">
          
-        <div class="row row-cols-1 row-cols-md-4 " style="  margin: 0 auto;">
+        <div class="mm" style="  margin: 0 auto;">
         <% datos.forEach(function(user){ %>
           <a href="/<%=user.id%>">
-            <div class="col mb-4">
-              <div class="card"   style="width: 18rem; ">
+            <div>
+              <div class="corte" style="margin: auto;margin-bottom:10px;" >
                 <img src="https://image.tmdb.org/t/p/w400<%=user.poster_path%>"  class="card-img-top" alt="...">
                
               </div>

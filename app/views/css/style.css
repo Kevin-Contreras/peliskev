@@ -4,7 +4,14 @@ body{
 h1{
     color:white;
 }
-
+#response{
+width: 90%;
+margin: auto;
+}
+#response2{
+    width: 90%;
+    margin: auto;
+    }
 .degradado{
    width: 100%;
    height:100vh ;
@@ -47,4 +54,44 @@ h1{
     vertical-align: middle;
     
 
+}
+.mm{
+    display: grid;
+	grid-template-columns: repeat(4,1fr);
+	
+}
+.corte{
+    width: 18rem;
+   
+}
+@media screen and (max-width: 1410px) {
+ 
+    .mm{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+       
+    }
+}
+@media screen and (max-width: 1080px) {
+ 
+    .mm{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+}
+@media screen and (max-width: 900px) {
+ 
+    .mm{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+   
+}
+@media screen and (max-width: 400px) {
+    .corte{
+        width: 12rem;
+       
+    }
 }
