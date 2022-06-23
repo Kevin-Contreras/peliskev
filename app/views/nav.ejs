@@ -20,6 +20,7 @@
         
         </form>
       </nav>
+      <h1 style="color:white;margin-bottom: 50px;margin-top:50px; text-align: center;" id="titulo">PELISKEV</h1>
       <div id="response"></div>
       <div id="response2"></div>
       <div >
@@ -34,6 +35,7 @@
         var data =   document.getElementById("texto").addEventListener("keyup",function(event){
            console.log(document.getElementById("texto").value)
            document.body.style.backgroundColor = "black";
+           document.getElementById("titulo").innerHTML="PELISKEV"
             ajax()
             
           })
