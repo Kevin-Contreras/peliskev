@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand " style="color:white">PELIS</a>
+        <a class="navbar-brand " href="/" style="color:white">INICIO</a>
+        
+      </nav>
+    
+
+
+  <div class="card-img bg-dark text-white" style="background-image:url(https://image.tmdb.org/t/p/original<%=dato.poster_path%>);">
+    <div class="degradado">
+    <div class="card-img-overlay">
+      <h5 class="card-title text-centro" ><%=dato.original_title%></h5>
+      
+    
+    </div>
+  </div>
+ 
+</div>  
+      <div style="width: 30%; margin: auto; margin-bottom: 100px;">
+        <h3 style="text-align: center; color:white;">OVERVIEW</h3>
+        <p style="color:white; text-align: center;" ><%=dato.overview%></p>
+      </div>
+
+  
+      <h3 style="text-align: center; color:white;">ACTORS</h3>
+      <div class="slides ">
+      <% actores.forEach(function(user){ if(user.profile_path != null){ %>
+        <div style="width: 200px;">
+       <a href="/actor/<%=user.id%>">
+        
+          <img src="https://image.tmdb.org/t/p/w400<%=user.profile_path_%>" class="card-img-top" alt="...">
+       </a>
+        
+         
+              
+     
+        
+         
+          <p style="color:white;text-align: center;"><%=user.name%></p>
+         </div>
+      
+      <% }else{%>
+        <div style="width: 200px;">
+        <a href="/actor/<%=user.id%>">
+         
+            <img src="./img/guest.jpg" style="height: 300px;" class="card-img-top" alt="...">
+          </a>
+          <p style="color:white; text-align: center;"><%=user.name%></p>
+          </div>   
+           
+          
+       
+        
+        <%  } %>
+        <%  });  %>
+    </div>
+
+</body>
+</html>

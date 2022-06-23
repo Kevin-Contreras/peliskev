@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pelis</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand " style="color:white">PELIS</a>
+        <a class="navbar-brand " href="/" style="color:white">INICIO</a>
+        <form class="form-inline" method="post" action="/busqueda" id="nombre"enctype="application/x-www-form-urlencoded">
+          <input class="form-control mr-sm-2" id ="texto" type="search" name="find" placeholder="Search" aria-label="Search">
+         
+        
+        </form>
+      </nav>
+      <div id="response"></div>
+      <div id="response2"></div>
+      <div >
+        <div class="d-flex justify-content-center">
+            <button type="button"  id="boton" class="btn btn-outline-primary">MAS PELICULAS</button>
+        </div>
+       
+      </div>
+      
+         <script>
+         
+        var data =   document.getElementById("texto").addEventListener("keyup",function(event){
+           console.log(document.getElementById("texto").value)
+           
+            ajax()
+            
+          })
+          var data2 = document.getElementById("boton").addEventListener("click",function(){
+              regrear2("no")
+          })
+          function regrear(){
+            const http = new XMLHttpRequest();
+            document.getElementById("boton").style.display="block";
+            document.getElementById("response2").style.display="block";
+            const url2 ="/popu"
+            http.onreadystatechange = function(){
+              if(http.readyState ==4 && http.status ==200){
+                
+                  document.getElementById("response").innerHTML=http.responseText
+                
+               
+               
+              }
+            }
+          
+          
+            http.open("GET",url2);
+         
+            http.send();
+          }
+          function regrear2(con){
+              if(con =="no"){
+                const http = new XMLHttpRequest();
+       
+       const url3 ="/popu2"
+       http.onreadystatechange = function(){
+         if(http.readyState ==4 && http.status ==200){
+           
+             document.getElementById("response2").innerHTML=http.responseText
+           
+          
+          
+         }
+       }
+     
+     
+       http.open("GET",url3);
+    
+       http.send();
+       document.getElementById("boton").style.display="none";
+              }else{
+                document.getElementById("boton").style.display="none";
+                document.getElementById("response2").style.display="none"
+              }
+
+       
+          }
+          
+          regrear()
+          
+          function ajax(){
+            const http = new XMLHttpRequest();
+            const url = "/busqueda";
+          
+            http.onreadystatechange = function(){
+              if(http.readyState ==4 && this.status ==200){
+                if(document.getElementById("texto").value==""){
+                 regrear()
+                
+                }else{
+                  document.getElementById("response").innerHTML=this.responseText
+
+                }
+               
+               
+              }
+            }
+           
+            
+           
+            http.open("POST",url);
+           
+            http.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+            http.send("find="+document.getElementById("texto").value);
+            regrear2("s")
+          }
+        
+           </script>
+</body>
+
+</html>
