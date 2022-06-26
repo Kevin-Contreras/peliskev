@@ -32,16 +32,43 @@
   </div>
  
 </div>  
-      <div style="width: 80%; margin: auto; margin-bottom: 100px;">
+      <div style="width: 80%; margin: auto; margin-bottom: 100px; ">
         <h3 style="text-align: center; color:white;">BIOGRAPHY</h3>
         <p style="color:white; text-align: center;" ><%=dato.biography%></p>
       </div>
 
-  
-      <h3 style="text-align: center; color:white;">MOVIES</h3>
-      <div class="slides ">
-      <% actores.forEach(function(user){ if(user.poster_path != null){ %>
+      <h3 style="text-align: center; color:white; margin-bottom: 100px;">PICTURES</h3>
+      <div class="slides " style="margin-bottom: 50px;">
+      <% actoress.forEach(function(user){ if(user.file_path != null){ %>
         <div style="width: 200px;">
+     
+        
+          <img src="https://image.tmdb.org/t/p/original<%=user.file_path%>" class="card-img-top" alt="...">
+       
+
+          <p style="color:white;text-align: center;"><%=user.original_title%></p>
+         </div>
+      
+      <% }else{%>
+        <div style="width: 200px;">
+       
+         
+            <img src="/img/guest.jpg" style="height: 300px;" class="card-img-top" alt="...">
+          
+          <p style="color:white; text-align: center;"><%=user.title%></p>
+          </div>   
+           
+          
+       
+        
+        <%  } %>
+        <%  });  %>
+    </div>
+    
+      <h3 style="text-align: center; color:white; margin-bottom: 50px;">MOVIES</h3>
+      <div class="slides " style="margin-bottom: 30px;">
+      <% actores.forEach(function(user){ if(user.poster_path != null){ %>
+        <div style="width: 200px;  ">
        <a href="/<%=user.id%>">
         
           <img src="https://image.tmdb.org/t/p/original<%=user.poster_path%>" class="card-img-top" alt="...">
@@ -51,7 +78,7 @@
          </div>
       
       <% }else{%>
-        <div style="width: 200px;">
+        <div style="width: 200px;  margin-bottom: 100px;">
         <a href="/<%=user.id%>">
          
             <img src="/img/guest.jpg" style="height: 300px;" class="card-img-top" alt="...">
@@ -59,9 +86,6 @@
           <p style="color:white; text-align: center;"><%=user.title%></p>
           </div>   
            
-          
-       
-        
         <%  } %>
         <%  });  %>
     </div>

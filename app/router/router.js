@@ -81,6 +81,7 @@ router.get("/:id",function(req,res){
 router.get("/actor/:id",function(req,res){
     var actorPelicula="";
     var peliculasActor="";
+    var peliculasActors="";
 
     request("https://api.themoviedb.org/3/person/"+req.params.id.toString()+"?api_key=bf1b3a179a48104bd1bbf23e4b68a18a",(err,response,body)=>{
         if (!err){
@@ -88,10 +89,19 @@ router.get("/actor/:id",function(req,res){
             request("https://api.themoviedb.org/3/person/"+req.params.id.toString()+"/movie_credits?api_key=bf1b3a179a48104bd1bbf23e4b68a18a",(err,response,body)=>{
                 if (!err){
                     peliculasActor = JSON.parse(body);
+                    request("https://api.themoviedb.org/3/person/"+req.params.id.toString()+"/images?api_key=bf1b3a179a48104bd1bbf23e4b68a18a",(err,response,body)=>{
+                        if (!err){
+                            peliculasActors = JSON.parse(body);
+                            console.log(peliculasActors)
+                        }
+                        
+                        res.render("nuevo",{dato:actorPelicula,actores:peliculasActor.cast,actoress:peliculasActors.profiles})
+                    })
                 }
-                console.log(peliculasActor.cast)
-                res.render("nuevo",{dato:actorPelicula,actores:peliculasActor.cast})
+                
             })
+
+
            
         }
        
