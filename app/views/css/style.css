@@ -46,7 +46,9 @@ margin: auto;
 .dds{
     padding-top:20px ;
 }
-
+.nnnn{
+    display: inline;
+}
 .text-centro{
     text-align: center;
     display: table-cell;
