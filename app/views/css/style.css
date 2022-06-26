@@ -43,6 +43,9 @@ margin: auto;
     width: 200px;
     
 }
+.dds{
+    padding-top:20px ;
+}
 
 .text-centro{
     text-align: center;
@@ -55,6 +58,9 @@ margin: auto;
     
 
 }
+.ww{
+    width: 40px; margin-top: -3px;
+}
 .mm{
     display: grid;
 	grid-template-columns: repeat(4,1fr);
@@ -63,6 +69,9 @@ margin: auto;
 .corte{
     width: 18rem;
    
+}
+.dds{
+    background: black;
 }
 @media screen and (max-width: 1410px) {
  
@@ -91,7 +100,44 @@ margin: auto;
 }
 @media screen and (max-width: 400px) {
     .corte{
+
         width: 12rem;
        
     }
+    .dd{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+ 
+    .dd{
+        display: none;
+    }
+    #texto{
+        width: 180px;
+    }
+
+.cc{
+    display: none;
+}
+.ww{
+    margin-left: 20px;
+}
+
+}
+@media screen and (max-width: 312px) {
+ 
+  
+    #texto{
+        width: 150px;
+    }
+
+.cc{
+    display: none;
+}
+.ww{
+    margin-left: 1px;
+}
+
 }
