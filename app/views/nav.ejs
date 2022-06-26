@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-light dds" style="background:black ;">
       <div>
-        <a class="navbar-brand cc" style="color:white" id="n">PELISKEV</a><img src="./img/movie.png " class="ww" alt="">
+        <a class="navbar-brand cc" style="color:white" id="n">PELISKEV</a><img src="./img/movie.png "id="ww" class="ww" alt="">
       </div>
         
         <form class="form-inline" method="post" action="/busqueda" id="nombre"enctype="application/x-www-form-urlencoded">
@@ -35,13 +35,19 @@
          <script>
             var x = window.matchMedia("(max-width: 520px)")
          var d = document.getElementById("n");
+         var dw = document.getElementById("ww");
+
+         var data =   document.getElementById("texto")
            if(x.matches){
-            
+            data.style.width="180px;"
             d.style.display="none";
+            dw.style.margin.left= "20px";
            }else{
+            data.style.height="200px";
             d.style.display="static";
+            dw.style.margin.left= "0px";
            }
-        var data =   document.getElementById("texto").addEventListener("keyup",function(event){
+        data.addEventListener("keyup",function(event){
            console.log(document.getElementById("texto").value)
            document.body.style.backgroundColor = "black";
          
