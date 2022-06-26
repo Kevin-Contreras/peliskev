@@ -16,7 +16,6 @@
         <a class="navbar-brand cc" style="color:white" id="n">PELISKEV</a><img src="./img/movie.png " class="ww" alt="">
       </div>
         
-        <a class="navbar-brand dd"  href="/" style="color:white">INICIO</a>
         <form class="form-inline" method="post" action="/busqueda" id="nombre"enctype="application/x-www-form-urlencoded">
           <input class="form-control mr-sm-2" id ="texto" type="search" name="find" placeholder="Search" aria-label="Search">
          
@@ -34,17 +33,17 @@
       </div>
       
          <script>
-         
+            var x = window.matchMedia("(max-width: 520px)")
+         var d = document.getElementById("dd");
+           if(x.matches){
+            
+            d.style.display="none";
+           }
         var data =   document.getElementById("texto").addEventListener("keyup",function(event){
            console.log(document.getElementById("texto").value)
            document.body.style.backgroundColor = "black";
-           var x = window.matchMedia("(max-width: 520px)")
-           if(x.matches){
-            var d=document.getElementById("d")
-            d.style.display="none"
-           }else{
-
-           }
+         
+           
            document.getElementById("titulo").innerHTML="PELISKEV"
             ajax()
             
