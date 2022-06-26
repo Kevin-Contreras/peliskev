@@ -40,9 +40,11 @@
          var data =   document.getElementById("texto")
            if(x.matches){
             data.style.width="180px;"
+            d.style.display="none";
             dw.style.margin.left= "20px";
            }else{
             data.style.width="200px";
+            d.style.display="static";
             dw.style.margin.left= "0px";
            }
         data.addEventListener("keyup",function(event){
