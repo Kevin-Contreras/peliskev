@@ -41,19 +41,18 @@
       <div
         class="form-inline"
         class="nnnn"
-        style="display: inline-block; float: right"
         method="post"
         action="/busqueda"
         id="nombre"
       >
+        <!-- <ion-icon name="search-outline"></ion-icon> -->
         <input
-          style="display: inline-block"
-          class="form-control mr-sm-2"
+          class="form-control mr-sm-2 search-bar"
           id="texto"
           type="text"
           name="find"
-          placeholder="Search"
-          aria-label="Search"
+          placeholder="Search movies"
+          aria-label="Search movies"
         />
       </div>
     </nav>
@@ -177,5 +176,15 @@
         regrear2("s");
       }
     </script>
+
+    <!-- ion icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
