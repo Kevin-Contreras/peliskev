@@ -75,6 +75,9 @@ h1 {
 }
 .dds {
   padding: 20px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
 }
 .nnnn {
   display: inline;
