@@ -34,7 +34,7 @@
           href="/"
           style="font-weight: bold; font-size: 32px"
           id="n"
-          >PELIS<span style="color: blueviolet">KEV</span></a
+          >PELIS<span style="color: var(--primary-color, #8a0296)">KEV</span></a
         >
       </div>
 
@@ -101,7 +101,6 @@
           d.style.display = "static";
         }
         console.log(document.getElementById("texto").value);
-        document.body.style.backgroundColor = "black";
 
         document.getElementById("titulo").innerHTML = "PELISKEV";
         ajax();
@@ -115,7 +114,6 @@
         const http = new XMLHttpRequest();
         document.getElementById("boton").style.display = "block";
         document.getElementById("response2").style.display = "block";
-        document.body.style.backgroundColor = "black";
         const url2 = "/popu";
         http.onreadystatechange = function () {
           if (http.readyState == 4 && http.status == 200) {
@@ -128,7 +126,6 @@
         http.send();
       }
       function regrear2(con) {
-        document.body.style.backgroundColor = "black";
         if (con == "no") {
           const http = new XMLHttpRequest();
 
