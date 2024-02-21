@@ -36,7 +36,6 @@
           id="n"
           >PELIS<span style="color: blueviolet">KEV</span></a
         >
-        <img src="./img/movie.png " id="ww" class="ww" alt="" />
       </div>
 
       <div
@@ -82,31 +81,25 @@
     <script>
       var x = window.matchMedia("(max-width: 520px)");
       var d = document.getElementById("n");
-      var dw = document.getElementById("ww");
 
       var data = document.getElementById("texto");
       if (x.matches) {
         data.style.width = "180px;";
         d.style.display = "none";
-        dw.style.margin.left = "20px";
       } else {
         data.style.width = "200px";
         d.style.display = "static";
-        dw.style.margin.left = "0px";
       }
       data.addEventListener("keyup", function (event) {
         var x = window.matchMedia("(max-width: 520px)");
         var d = document.getElementById("n");
-        var dw = document.getElementById("ww");
 
         if (x.matches) {
           data.style.width = "180px;";
           d.style.display = "none";
-          dw.style.margin.left = "20px";
         } else {
           data.style.width = "200px";
           d.style.display = "static";
-          dw.style.margin.left = "0px";
         }
         console.log(document.getElementById("texto").value);
         document.body.style.backgroundColor = "black";
