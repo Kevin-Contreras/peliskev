@@ -1,16 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --background-color: #111111;
   --surface-color: #1a1a1a;
   --primary-color: #8a0296;
+  --text-low-contrast: #828282;
 }
 
 body {
   background-color: var(--background-color, #111);
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  color: white;
+}
+
+.dds,
+#titulo {
   font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: white;
+  font-weight: bold;
+}
+
+.accent-text {
+  color: var(--primary-color, #8a0296);
 }
 
 h1 {
@@ -75,7 +89,7 @@ h1 {
   width: 200px;
 }
 .dds {
-  padding: 20px 48px;
+  padding: 18px 48px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
@@ -152,4 +166,24 @@ input.search-bar {
   .ww {
     margin-left: 1px;
   }
+}
+
+footer {
+  text-align: center;
+  padding: 36px;
+  background-color: var(--surface-color);
+  margin-top: 56px;
+  font-weight: normal;
+}
+
+footer #contribute {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+footer #copyright {
+  font-size: 14px;
+  color: var(--text-low-contrast);
 }
