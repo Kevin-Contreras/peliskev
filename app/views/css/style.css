@@ -103,7 +103,7 @@ input.search-bar {
 }
 .mm {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 .corte {
   width: 18rem;
@@ -111,24 +111,24 @@ input.search-bar {
 .dds {
   background: black;
 }
-@media screen and (max-width: 1410px) {
+/* @media screen and (max-width: 1410px) {
   .mm {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-}
-@media screen and (max-width: 1080px) {
+} */
+/* @media screen and (max-width: 1080px) {
   .mm {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media screen and (max-width: 900px) {
+} */
+/* @media screen and (max-width: 900px) {
   .mm {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
-}
+} */
 @media screen and (max-width: 400px) {
   .corte {
     width: 12rem;
