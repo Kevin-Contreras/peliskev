@@ -1,21 +1,20 @@
-
 <body>
+  <div>
+    <div class="mm" style="margin: 0 auto">
+      <% datos.forEach(function(user){ %>
+      <a href="/<%=user.id%>">
+        <div class="efecto">
+          <div class="corte" style="margin: auto; margin-bottom: 10px">
+            <img
+              src="https://image.tmdb.org/t/p/w400<%=user.poster_path%>"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+        </div>
+      </a>
 
-      <div style="margin-left:4%;" id="response">
-         
-        <div class="mm" style="  margin: 0 auto;">
-        <% datos.forEach(function(user){ %>
-          <a href="/<%=user.id%>">
-            <div class="efecto">
-              <div class="corte" style="margin: auto;margin-bottom:10px;" >
-                <img src="https://image.tmdb.org/t/p/w400<%=user.poster_path%>"  class="card-img-top" alt="...">
-               
-              </div>
-            </div>
-          </a>
-          
-        <% });  %>
-      </div>
-
-         </div>
-        
+      <% }); %>
+    </div>
+  </div>
+</body>

@@ -1,159 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
     <title>PELISKEV</title>
-</head>
-<body>
-    <nav class="navbar-light dds" style="background:black;">
-      <div style="display:inline-block ; margin-left:20px ;">
-        <a class="navbar-brand cc" href="/" style="color:white" id="n">PELISKEV</a><img src="./img/movie.png "id="ww" class="ww" alt="">
+  </head>
+  <body>
+    <nav
+      class="navbar-dark dds"
+      style="background: var(--surface-color, #1a1a1a)"
+    >
+      <div style="display: inline-block">
+        <a
+          class="navbar-brand cc"
+          href="/"
+          style="font-weight: bold; font-size: 32px"
+          id="n"
+          >PELIS<span class="accent-text">KEV</span></a
+        >
       </div>
-        
-          <div class="form-inline" class="nnnn" style="display: inline-block; float:right;margin-right:20px;" method="post" action="/busqueda" id="nombre">
-            <input style="display:inline-block ;" class="form-control mr-sm-2"  id ="texto" type="text" name="find" placeholder="Search" aria-label="Search">
 
-          </div>
-         
-        
-        
-      </nav>
-      <h1 style="color:white;margin-bottom: 50px;margin-top:50px; text-align: center;" id="titulo">PELISKEV</h1>
-      <div id="response"></div>
-      <div id="response2"></div>
-      <div>
-        <div class="d-flex justify-content-center">
-            <button type="button"  id="boton" class="btn btn-outline-primary">MAS PELICULAS</button>
-        </div>
-       
+      <div
+        class="form-inline"
+        class="nnnn"
+        method="post"
+        action="/busqueda"
+        id="nombre"
+      >
+        <!-- <ion-icon name="search-outline"></ion-icon> -->
+        <input
+          class="form-control mr-sm-2 search-bar"
+          id="texto"
+          type="text"
+          name="find"
+          placeholder="Search movies"
+          aria-label="Search movies"
+        />
       </div>
-      
-         <script>
-            var x = window.matchMedia("(max-width: 520px)")
-         var d = document.getElementById("n");
-         var dw = document.getElementById("ww");
+    </nav>
+    <h1
+      style="
+        color: white;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        text-align: center;
+      "
+      id="titulo"
+    >
+      PELIS<span class="accent-text">KEV</span>
+    </h1>
+    <div id="response"></div>
+    <div id="response2"></div>
+    <div>
+      <div class="d-flex justify-content-center">
+        <button type="button" id="boton" class="btn btn-outline-primary">
+          MAS PELICULAS
+        </button>
+      </div>
+    </div>
 
-         var data =   document.getElementById("texto")
-           if(x.matches){
-            data.style.width="180px;"
-            d.style.display="none";
-            dw.style.margin.left= "20px";
-           }else{
-            data.style.width="200px";
-            d.style.display="static";
-            dw.style.margin.left= "0px";
-           }
-        data.addEventListener("keyup",function(event){
-          var x = window.matchMedia("(max-width: 520px)")
-         var d = document.getElementById("n");
-         var dw = document.getElementById("ww");
+    <script>
+      var x = window.matchMedia("(max-width: 520px)");
+      var d = document.getElementById("n");
 
-           if(x.matches){
-            data.style.width="180px;"
-            d.style.display="none";
-            dw.style.margin.left= "20px";
-           }else{
-            data.style.width="200px";
-            d.style.display="static";
-            dw.style.margin.left= "0px";
-           }
-           console.log(document.getElementById("texto").value)
-           document.body.style.backgroundColor = "black";
-         
-           
-           document.getElementById("titulo").innerHTML="PELISKEV"
-            ajax()
-            
-          })
-          var data2 = document.getElementById("boton").addEventListener("click",function(){
-              regrear2("no")
-          })
-          function regrear(){
-            const http = new XMLHttpRequest();
-            document.getElementById("boton").style.display="block";
-            document.getElementById("response2").style.display="block";
-            document.body.style.backgroundColor = "black";
-            const url2 ="/popu"
-            http.onreadystatechange = function(){
-              if(http.readyState ==4 && http.status ==200){
-                
-                  document.getElementById("response").innerHTML=http.responseText
-                
-               
-               
-              }
+      var data = document.getElementById("texto");
+      if (x.matches) {
+        data.style.width = "180px;";
+        d.style.display = "none";
+      } else {
+        data.style.width = "200px";
+        d.style.display = "static";
+      }
+      data.addEventListener("keyup", function (event) {
+        var x = window.matchMedia("(max-width: 520px)");
+        var d = document.getElementById("n");
+
+        if (x.matches) {
+          data.style.width = "180px;";
+          d.style.display = "none";
+        } else {
+          data.style.width = "200px";
+          d.style.display = "static";
+        }
+        console.log(document.getElementById("texto").value);
+
+        document.getElementById("titulo").innerHTML = "PELISKEV";
+        ajax();
+      });
+      var data2 = document
+        .getElementById("boton")
+        .addEventListener("click", function () {
+          regrear2("no");
+        });
+      function regrear() {
+        const http = new XMLHttpRequest();
+        document.getElementById("boton").style.display = "block";
+        document.getElementById("response2").style.display = "block";
+        const url2 = "/popu";
+        http.onreadystatechange = function () {
+          if (http.readyState == 4 && http.status == 200) {
+            document.getElementById("response").innerHTML = http.responseText;
+          }
+        };
+
+        http.open("GET", url2);
+
+        http.send();
+      }
+      function regrear2(con) {
+        if (con == "no") {
+          const http = new XMLHttpRequest();
+
+          const url3 = "/popu2";
+          http.onreadystatechange = function () {
+            if (http.readyState == 4 && http.status == 200) {
+              document.getElementById("response2").innerHTML =
+                http.responseText;
             }
-          
-          
-            http.open("GET",url2);
-         
-            http.send();
-          }
-          function regrear2(con){
-            document.body.style.backgroundColor = "black";
-              if(con =="no"){
-                const http = new XMLHttpRequest();
-       
-       const url3 ="/popu2"
-       http.onreadystatechange = function(){
-         if(http.readyState ==4 && http.status ==200){
-           
-             document.getElementById("response2").innerHTML=http.responseText;
-           
-          
-          
-         }
-       }
-     
-     
-       http.open("GET",url3);
-    
-       http.send();
-       document.getElementById("boton").style.display="none";
-              }else{
-                document.getElementById("boton").style.display="none";
-                document.getElementById("response2").style.display="none"
-              }
+          };
 
-       
-          }
-          
-          regrear()
-          
-          function ajax(){
-            const http = new XMLHttpRequest();
-            const url = "/busqueda";
-          
-            http.onreadystatechange = function(){
-              if(http.readyState ==4 && this.status ==200){
-                if(document.getElementById("texto").value==""){
-                 regrear()
-                
-                }else{
-                  document.getElementById("response").innerHTML=this.responseText
+          http.open("GET", url3);
 
-                }
-               
-               
-              }
+          http.send();
+          document.getElementById("boton").style.display = "none";
+        } else {
+          document.getElementById("boton").style.display = "none";
+          document.getElementById("response2").style.display = "none";
+        }
+      }
+
+      regrear();
+
+      function ajax() {
+        const http = new XMLHttpRequest();
+        const url = "/busqueda";
+
+        http.onreadystatechange = function () {
+          if (http.readyState == 4 && this.status == 200) {
+            if (document.getElementById("texto").value == "") {
+              regrear();
+            } else {
+              document.getElementById("response").innerHTML = this.responseText;
             }
-           
-            
-           
-            http.open("POST",url);
-           
-            http.setRequestHeader("Content-type","application/x-www-form-urlencoded")
-            http.send("find="+document.getElementById("texto").value);
-            regrear2("s")
           }
-        
-           </script>
-</body>
+        };
 
+        http.open("POST", url);
+
+        http.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        http.send("find=" + document.getElementById("texto").value);
+        regrear2("s");
+      }
+    </script>
+
+    <footer>
+      <a id="contribute" href="https://github.com/Kevin-Contreras/peliskev">
+        <ion-icon style="font-size: 22px" name="logo-github"></ion-icon>
+        <span>Contribute on Github</span>
+      </a>
+      <div id="copyright">© 2024 Kevin Contreras.</div>
+    </footer>
+
+    <!-- ion icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
