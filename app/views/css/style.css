@@ -141,8 +141,12 @@ input.search-bar {
   .dd {
     display: none;
   }
+  .dds{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 100%);
+  }
   #texto {
-    width: 180px;
+    width: 100%;
   }
 
   .cc {
@@ -153,9 +157,15 @@ input.search-bar {
   }
 }
 @media screen and (max-width: 312px) {
-  #texto {
-    width: 150px;
-  }
+  .dds{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100%);
+   }
+   #texto {
+     width: 100%;
+   }
+ 
+  
 
   .cc {
     display: none;
