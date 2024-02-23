@@ -24,12 +24,12 @@
     <title>PELISKEV</title>
   </head>
   <body>
-    <div style="margin-left: 4%" id="response">
+    <div>
       <div class="mm" style="margin: 0 auto">
         <% datos.forEach(function(user){ %>
         <a href="/<%=user.id%>">
           <div class="efecto">
-            <div style="margin: auto; margin-bottom: 10px" class="corte">
+            <div class="corte">
               <img
                 src="https://image.tmdb.org/t/p/w400<%=user.poster_path%>"
                 class="card-img-top"

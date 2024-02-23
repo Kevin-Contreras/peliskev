@@ -17,7 +17,7 @@ h1 {
   color: white;
 }
 #response {
-  width: 90%;
+  width: 85%;
   margin: auto;
 }
 
@@ -40,7 +40,7 @@ h1 {
   animation-fill-mode: both;
 }
 #response2 {
-  width: 90%;
+  width: 85%;
   margin: auto;
 }
 .degradado {
@@ -103,32 +103,17 @@ input.search-bar {
 }
 .mm {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, 220px);
+  gap: 32px;
+  justify-content: center;
 }
 .corte {
-  width: 18rem;
+  width: 220px;
 }
 .dds {
   background: black;
 }
-/* @media screen and (max-width: 1410px) {
-  .mm {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
-/* @media screen and (max-width: 1080px) {
-  .mm {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */
-/* @media screen and (max-width: 900px) {
-  .mm {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-  }
-} */
+
 @media screen and (max-width: 400px) {
   .corte {
     width: 12rem;
