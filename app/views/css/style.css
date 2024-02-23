@@ -110,6 +110,8 @@ input.search-bar {
 }
 .corte {
   width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .dds {
   background: black;
