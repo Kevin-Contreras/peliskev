@@ -184,6 +184,11 @@ footer #contribute {
   padding-bottom: 4px;
   text-decoration: none;
   color: white;
+  transition: scale cubic-bezier(0.46, 0.03, 0.52, 0.96) 250ms;
+}
+
+footer #contribute:hover {
+  scale: 1.05;
 }
 
 footer #copyright {
