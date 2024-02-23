@@ -178,9 +178,12 @@ footer {
 
 footer #contribute {
   display: flex;
-  justify-content: center;
+  margin: auto;
+  width: fit-content;
   gap: 12px;
   padding-bottom: 4px;
+  text-decoration: none;
+  color: white;
 }
 
 footer #copyright {
