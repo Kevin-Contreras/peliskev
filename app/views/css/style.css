@@ -106,6 +106,7 @@ input.search-bar {
   grid-template-columns: repeat(auto-fit, 220px);
   gap: 32px;
   justify-content: center;
+  justify-items: center;
 }
 .corte {
   width: 220px;
