@@ -31,7 +31,7 @@ h1 {
   color: white;
 }
 #response {
-  width: 85%;
+  width: 95%;
   margin: auto;
 }
 
@@ -53,10 +53,7 @@ h1 {
   animation-range: entry 10% cover 30%;
   animation-fill-mode: both;
 }
-#response2 {
-  width: 85%;
-  margin: auto;
-}
+
 .degradado {
   width: 100%;
   height: 100vh;

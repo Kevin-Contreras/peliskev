@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>PELISKEV</title>
   </head>
-  <body>
+  <body 
+  style=" background: black" >
     <nav
       class="navbar-dark dds"
       style="background: var(--surface-color, #1a1a1a)"
@@ -68,14 +69,7 @@
       PELIS<span class="accent-text">KEV</span>
     </h1>
     <div id="response"></div>
-    <div id="response2"></div>
-    <div>
-      <div class="d-flex justify-content-center">
-        <button type="button" id="boton" class="btn btn-outline-primary">
-          MAS PELICULAS
-        </button>
-      </div>
-    </div>
+
 
     <script>
       var x = window.matchMedia("(max-width: 520px)");
@@ -105,15 +99,10 @@
         document.getElementById("titulo").innerHTML = "PELISKEV";
         ajax();
       });
-      var data2 = document
-        .getElementById("boton")
-        .addEventListener("click", function () {
-          regrear2("no");
-        });
+      
       function regrear() {
         const http = new XMLHttpRequest();
-        document.getElementById("boton").style.display = "block";
-        document.getElementById("response2").style.display = "block";
+        
         const url2 = "/popu";
         http.onreadystatechange = function () {
           if (http.readyState == 4 && http.status == 200) {
@@ -125,27 +114,7 @@
 
         http.send();
       }
-      function regrear2(con) {
-        if (con == "no") {
-          const http = new XMLHttpRequest();
 
-          const url3 = "/popu2";
-          http.onreadystatechange = function () {
-            if (http.readyState == 4 && http.status == 200) {
-              document.getElementById("response2").innerHTML =
-                http.responseText;
-            }
-          };
-
-          http.open("GET", url3);
-
-          http.send();
-          document.getElementById("boton").style.display = "none";
-        } else {
-          document.getElementById("boton").style.display = "none";
-          document.getElementById("response2").style.display = "none";
-        }
-      }
 
       regrear();
 
@@ -170,7 +139,6 @@
           "application/x-www-form-urlencoded"
         );
         http.send("find=" + document.getElementById("texto").value);
-        regrear2("s");
       }
     </script>
 
