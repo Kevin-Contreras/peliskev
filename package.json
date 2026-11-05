@@ -10,6 +10,7 @@
   "author": "kevin__contreras",
   "license": "MIT",
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@vercel/analytics": "^2.0.1",
     "body-parser": "^1.20.0",
     "ejs": "^3.1.8",

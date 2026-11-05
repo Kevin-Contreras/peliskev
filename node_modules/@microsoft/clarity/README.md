@@ -1,0 +1,125 @@
+# @microsoft/clarity
+
+Microsoft Clarity is a comprehensive, free behavioral analytics tool designed to give you in-depth insights into user behavior on your website. With Clarity, you can utilize session replays, heatmaps, insights, and the Clarity Copilot feature, which provides intelligent summaries and actionable insights to help you optimize your site more effectively and drive data-driven decisions.
+
+The Clarity NPM package will help you bring [Clarity](http://Clarity.microsoft.com?utm_source=npm) directly to your website.
+
+## Installation
+
+Add this package as a dependency in your project:
+
+```sh
+npm install @microsoft/clarity
+```
+
+Then import the library in your code:
+
+```js
+import Clarity from '@microsoft/clarity';
+```
+
+## Initialize Clarity
+
+To activate the Clarity project, Clarity needs to be initialized with the Clarity project ID.
+To get the Clarity project ID, go to your [Clarity project](https://clarity.microsoft.com/projects?utm_source=npm) > Settings > Overview.
+
+```js
+// Make sure to add your actual project id instead of "yourProjectId".
+const projectId = "yourProjectId"
+
+Clarity.init(projectId);
+```
+
+### Parameters
+- **projectId**: `String` (Required)
+  - Description: The ID of the project.
+
+## Identify API
+
+Custom identifiers are informational data values about site visitors that are sent to Clarity by your client-side code over its Identify API. They include custom-id, custom-session-id, and custom-page-id and can help you customize the features on your site that requires it.
+
+```js
+Clarity.identify("custom-id", "custom-session-id", "custom-page-id", "friendly-name"); // only custom-id is required
+```
+
+### Parameters
+- **customId**: `string` (Required)
+  - Description: The unique identifier for the customer.
+- **customSessionId**: `string` (Optional)
+  - Description: A custom session identifier.
+- **customPageId**: `string` (Optional)
+  - Description: A custom page identifier.
+- **friendlyName**: `string` (Optional)
+  - Description: A friendly name for the customer.
+
+### Note
+- Clarity securely hashes the **customId** on the client before being sent to Clarity servers.
+- For optimal user tracking, the Identify API should be called for each page of the website even if you are not passing a custom-session-id or custom-page-id.
+
+## Custom tags API
+
+Clarity offers many predefined ways to filter and analyze website data. However, you might want to track elements specific to your site or user experience. With custom tags, you can apply arbitrary tags to your Clarity session.
+
+```js
+Clarity.setTag("key", "value");
+```
+
+### Parameters
+- **key**: `string` (Required)
+  - Description: The key for the tag.
+- **value**: `string | string[]` (Required)
+  - Description: The value(s) for the tag.
+
+## Custom events API
+
+If you prefer to instrument these user actions manually via Clarity APIs, call the event API with the action you'd like to track. When Clarity collects data for this event, it appears with your other Smart events in the Filters, Dashboard, Settings, and Recordings vertical.
+
+```js
+Clarity.event("custom-event");
+```
+### Parameters
+#### event
+- **eventName**: `string` (Required)
+  - Description: The name of the event.
+
+## Cookie consent
+
+If your project is configured to require [cookie consent](https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent), Clarity uses a unique first-party cookie to track each user with a browser cookie. If cookie consent is required, you must call the consent API to indicate that you have consent from the user to track them using a cookie.
+
+```js
+// v2 consent api (recommended)
+Clarity.consentV2(); // default value is set to { ad_Storage: 'granted', analytics_Storage: 'granted' }
+Clarity.consentV2({ ad_Storage: 'denied', analytics_Storage: 'granted' });
+
+// v1 consent api
+Clarity.consent(); // default value is set to true
+Clarity.consent(false);
+```
+### Parameters
+**v2**
+  - **consentOptions**: `{ ad_Storage: "granted" | "denied"; analytics_Storage: "granted" | "denied" }` (Optional)
+    - ad_Storage: Consent for storing data related to ads.
+    - analytics_Storage: Consent for storing analytics-related data.
+
+**v1**
+  - **consent**: `boolean` (Optional)
+    - Description: Indicates whether consent is given.
+
+## Upgrade session API
+
+You can use the upgrade API to prioritize specific types of sessions for recording. This is useful if you have sessions with specific types of events (such as clicks) that you want to look at or interactions with specific parts of your website (such as a shopping cart).
+
+```js
+Clarity.upgrade("reason");
+```
+### Parameters
+#### upgrade
+- **reason**: `string` (Required)
+  - Description: The reason for the upgrade.
+
+## Useful links
+
+- Clarity [documentation](https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-api)
+- Clarity support: [clarityms@micrsoft.com](mailto:clarityms@micrsoft.com)
+- Clarity [Legal Terms](https://www.microsoft.com/en-us/legal/terms-of-use)
+- Clarity [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
