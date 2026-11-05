@@ -1,16 +1,49 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "./index.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "missing": [
+        {
+          "type": "header",
+          "key": "user-agent"
+        }
+      ],
+      "mitigate": {
+        "action": "deny"
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": {
+            "re": "HeadlessChrome|python-requests|Scrapy|curl/|wget/|Go-http-client|Ahrefs|Semrush|PetalBot|Bytespider|GPTBot|ClaudeBot|Amazonbot|MJ12bot|DotBot|libwww-perl"
+          }
+        }
+      ],
+      "mitigate": {
+        "action": "deny"
       }
-    ]
-  }
+    },
+    {
+      "src": "^/(?!$|popu2$|popu$|busqueda$|css/|img/|_vercel/|actor/[0-9]+$|[0-9]+$).+",
+      "mitigate": {
+        "action": "deny"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
   
